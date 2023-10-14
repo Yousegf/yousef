@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Button Click Counter</title>
+    </head>
+    <link rel="stylesheet" href="CSS/style.css">
+    <body>
+        <h1>Button Click Counter</h1>
+        <p>Counter: <span id="counter">0</span></p>
+        <button id="addButton"><img src="cookie.jpg"></button>
+    
+        <p id="message"></p>
+    
+        <script>
+            var addButton = document.getElementById("addButton");
+            var counterSpan = document.getElementById("counter");
+            var counter = 0;
+            var messageParagraph = document.getElementById("message");
+    
+            addButton.addEventListener("click", () => {
+                counter++;
+                counterSpan.textContent = counter;
+
+                if (counter === 100) {
+                    var messages = ["Good job!", "Wow!", "Nice!", "Congratulations!"];
+                    var randomIndex = Math.floor(Math.random() * messages.length);
+                    var randomMessage = messages[randomIndex];
+                    messageParagraph.textContent = randomMessage;
+                    messageParagraph.style.display = "block";
+                }
+            });
+        </script>
+    </body>
+    </html>
+    
+    
